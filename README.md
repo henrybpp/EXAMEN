@@ -6,6 +6,10 @@ This README would normally document whatever steps are necessary to get your app
 
 * git clone https://github.com/henrybpp/EXAMEN.git
 
+### copiar el archivo de configuración en la ruta /external/properties ###
+
+* cp EXAMEN/files/backend-dev.properties /external/properties
+
 ### ejecutar las sentencias al mismo nivel que el repositorio ###
 
 * cp EXAMEN/files/deploy.sh deploy.sh
@@ -22,8 +26,8 @@ This README would normally document whatever steps are necessary to get your app
 
 * curl -X GET -H 'Content-Type: application/json' http://192.168.1.20:8082/evaluacion/lista
 
-### SWAGGER-UI###
+### SWAGGER-UI ###
 * http://192.168.1.20:8082/swagger-ui.html
 
-###MONGO DB###
+### MONGO DB ###
 * http://192.168.1.20:8081/
