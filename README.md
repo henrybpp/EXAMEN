@@ -2,28 +2,28 @@
 
 This README would normally document whatever steps are necessary to get your application up and running.
 
-### What is this repository for? ###
+### clonar el proyecto ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+* git clone https://github.com/henrybpp/EXAMEN.git
 
-### How do I get set up? ###
+### ejecutar las sentencias al mismo nivel que el repositorio ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+cp EXAMEN/files/deploy.sh deploy.sh
+chmod u+x deploy.sh
+bash -x deploy.sh
 
-### Contribution guidelines ###
+### Comandos de prueba rest api ###
 
-* Writing tests
-* Code review
-* Other guidelines
+curl -X POST -d '{"nombres":"test20","correo":"test20@gmail.com","telefono":"957898100","puntuacion":10,"comentarios": [{"comentario": "comentario20.1"}]}' -H 'Content-Type: application/json' http://192.168.1.20:8082/evaluacion/creacion
 
-### Who do I talk to? ###
+curl -X PUT -d '{"id":1,"nombres":"test1","correo":"test@gmail.com","telefono":"953258100","comentarios": [{"comentario": "comentario20.1"}],"fecha":"21/07/2020 21:44:49"}' -H 'Content-Type: application/json' http://192.168.1.20:8082/evaluacion/modificacion
 
-* Repo owner or admin
-* Other community or team contact
+curl -X POST -d '{"fechaDesde":"23/07/2020 21:44:49","fechaHasta":"24/07/2020 21:44:49"}' -H 'Content-Type: application/json' http://192.168.1.20:8082/evaluacion/lista/fecha
+
+curl -X GET -H 'Content-Type: application/json' http://192.168.1.20:8082/evaluacion/lista
+
+### SWAGGER-UI###
+http://192.168.1.20:8082/swagger-ui.html
+
+###MONGO DB###
+http://192.168.1.20:8081/
