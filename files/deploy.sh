@@ -29,7 +29,8 @@ function generate_docker_image() {
 }
 
 function generate_docker_container() {
-  docker run -d -p:8082:8082 -e TZ=America/Lima -v /external/properties/:/external/properties/ ms-evaluacion-web:1.0
+  docker rm -f evaluacion-container
+  docker run -d -p:8082:8082 -e TZ=America/Lima -v /external/properties/:/external/properties/ --name evaluacion-container ms-evaluacion-web:1.0
   echo "end generate container..."
 }
 
